@@ -2,6 +2,7 @@
 Questão 03 -Faça um algoritmo que faça a união de dois vetores de mesmo tamanho e mesmo tipo em um ter
 ceiro vetor com dobro do tamanho.
 '''
+
 # Criei o primeiro vetor com 5 elementos
 vetor1 = [1, 2, 3, 4, 5]
 

@@ -1,0 +1,17 @@
+'''
+Questão 08)
+Declare uma matriz 5 x 5. Preencha com 1 a diagonal principal e com 0 os demais elementos. Escreva ao final a matriz obtida. 
+'''
+
+# Criando uma matriz 5x5 preenchida com zeros
+# usando compreensão de listas para gerar uma lista de listas
+matriz = [[0 for _ in range(5)] for _ in range(5)]
+
+# Preenchendo a diagonal principal com 1
+# Isso ocorre quando o índice da linha é igual ao índice da coluna (i == j)
+for i in range(5):
+    matriz[i][i] = 1  # Define o elemento da diagonal principal como 1
+
+# Exibindo a matriz no terminal
+for linha in matriz:
+    print(linha)  # Imprime cada linha da matriz

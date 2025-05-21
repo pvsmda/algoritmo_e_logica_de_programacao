@@ -1,0 +1,13 @@
+'''
+Questão 02)
+Faça um programa que receba do usuário um vetor com 05 posições. Em seguida deverá ser impresso o maior e o menor elemento do vetor. 
+'''
+
+vetor = []
+
+for i in range(5):
+    vetor.append(int(input(f"Digite o {i+1}° valor: ")))
+
+print(vetor)
+print(f"O maior valor do vetor é: {max(vetor)}")
+print(f"O maior valor do vetor é: {min(vetor)}")

@@ -1,0 +1,18 @@
+'''
+Questão 06)
+Faça um programa que leia um vetor de 06 posições e, em seguida, leia também duas variáveis X e Y quaisquer, digitadas pelo usuário. O programa deve guardar em cada uma das posições do vetor o valor da soma, subtração, multiplicação, divisão, potenciação (xy) e radiciação (x√y) de X e Y. Ao final seu programa deverá exibir os valores das respectivas posições do vetor com suas respectivas operações. 
+'''
+
+vetor = []
+
+for i in range(6):
+    x = int(input("Digite o 1° valor: "))
+    y = int(input("Digite o 2° valor: "))
+    vetor.append(x+y)
+    vetor.append(x-y)
+    vetor.append(x*y)
+    vetor.append(x/y)
+    vetor.append(x**y)
+    vetor.append(x**(1/y))
+
+print(vetor)

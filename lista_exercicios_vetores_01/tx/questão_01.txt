@@ -1,0 +1,16 @@
+'''
+Questão 01)
+Fazer um algoritmo que solicita ao usuário 05 números inteiros. No algoritmo o programa deve imprimir na tela os números em ordem crescente e ainda dizer quem é o maior e quem é o menor deles. Obs(Para esse exercício utilizar apenas variáveis) 
+'''
+
+numero_1 = int(input("Digite o 1° número: "))
+numero_2 = int(input("Digite o 2° número: "))
+numero_3 = int(input("Digite o 3° número: "))
+numero_4 = int(input("Digite o 4° número: "))
+numero_5 = int(input("Digite o 5° número: "))
+
+print(f"Os números em ordem cresncente são: {sorted([numero_1,numero_2,numero_3,numero_4, numero_5])}")
+
+print(f"O maior numero é: {max([numero_1,numero_2,numero_3,numero_4, numero_5])}")
+
+print(f"O menor numero é: {min([numero_1,numero_2,numero_3,numero_4, numero_5])}")

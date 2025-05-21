@@ -1,0 +1,283 @@
+'''
+Questão 01)
+Fazer um algoritmo que solicita ao usuário 05 números inteiros. No algoritmo o programa deve imprimir na tela os números em ordem crescente e ainda dizer quem é o maior e quem é o menor deles. Obs(Para esse exercício utilizar apenas variáveis) 
+
+numero_1 = int(input("Digite o 1° número: "))
+numero_2 = int(input("Digite o 2° número: "))
+numero_3 = int(input("Digite o 3° número: "))
+numero_4 = int(input("Digite o 4° número: "))
+numero_5 = int(input("Digite o 5° número: "))
+
+print(f"Os números em ordem cresncente são: {sorted([numero_1,numero_2,numero_3,numero_4, numero_5])}")
+
+print(f"O maior numero é: {max([numero_1,numero_2,numero_3,numero_4, numero_5])}")
+
+print(f"O menor numero é: {min([numero_1,numero_2,numero_3,numero_4, numero_5])}")
+----------------------------------------------------------------------------------------------------------
+
+Questão 02)
+Faça um programa que receba do usuário um vetor com 05 posições. Em seguida deverá ser impresso o maior e o menor elemento do vetor. 
+
+vetor = []
+
+for i in range(5):
+    vetor.append(int(input(f"Digite o {i+1}° valor: ")))
+
+print(vetor)
+print(f"O maior valor do vetor é: {max(vetor)}")
+print(f"O maior valor do vetor é: {min(vetor)}")
+---------------------------------------------------------------------------------------------------------
+
+Questão 03)
+Escreva um programa que leia 10 números inteiros e os armazene em um vetor. Imprima todo o vetor, o maior elemento e a posição que ele se encontra.
+
+vetor = []
+
+for i in range(10):
+    vetor.append(int(input(f"Digite o {i+1}° valor: ")))
+
+print(vetor)
+print(f"O maior valor do vetor é: {max(vetor)}")
+print(f"A posição do maior valor do vetor é: {vetor.index(max(vetor))}")
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Questão 04)
+Fazer um algoritmo que contenha um vetor de 10(dez) espaços de memória e, que os mesmos sejam preenchidos com valores inteiros sorteados pelo próprio computador. O programa deve exibir todos os valores na tela e também escrever todos os números em ordem crescentes já modificado no próprio vetor. 
+
+import random
+
+vetor = []
+
+for i in range(10):
+    vetor.append(random.randint(0,100))
+
+print(f"Esse é o vetor: {vetor}")
+print(f"Esse é o vetor em ordem crescente: {sorted(vetor)}")
+---------------------------------------------------------------------------------------------------------
+
+Questão 05)
+Fazer um algoritmo que contenha um vetor de 10(dez) espaços de memória e, que os mesmos sejam preenchidos com valores inteiros sorteados pelo próprio computador. O programa deve exibir todos os números pares na tela. 
+
+import random
+
+vetor = []
+
+for i in range(10):
+    vetor.append(random.randint(0,100))
+print(vetor)
+
+for i in range(10):
+    if vetor[i] % 2 == 0:
+        print(f"Os números pares do vetor são: {vetor[i]}")
+---------------------------------------------------------------------------------------------------------
+
+Questão 06)
+Faça um programa que leia um vetor de 06 posições e, em seguida, leia também duas variáveis X e Y quaisquer, digitadas pelo usuário. O programa deve guardar em cada uma das posições do vetor o valor da soma, subtração, multiplicação, divisão, potenciação (xy) e radiciação (x√y) de X e Y. Ao final seu programa deverá exibir os valores das respectivas posições do vetor com suas respectivas operações. 
+
+vetor = []
+
+for i in range(6):
+    x = int(input("Digite o 1° valor: "))
+    y = int(input("Digite o 2° valor: "))
+    vetor.append(x+y)
+    vetor.append(x-y)
+    vetor.append(x*y)
+    vetor.append(x/y)
+    vetor.append(x**y)
+    vetor.append(x**(1/y))
+
+print(vetor)
+----------------------------------------------------------------------------------------------------------
+
+Questão 07)
+Faça um programa que receba do usuário valores inteiros para dois vetores, A e B. Cada um com 10 números. Crie um terceiro vetor denominado C que calcula C = A - B em cada posição igual de ambos. Mostre na tela os dados do vetor C.
+
+vetor_a = []
+vetor_b = []
+vetor_c = []
+
+for i in range(10):
+    vetor_a.append(int(input(f"Digite o {i+1}° valor do vetor A: ")))
+    vetor_b.append(int(input(f"Digite o {i+1}° valor do vetor B: ")))
+    vetor_c.append(vetor_a[i] - vetor_b[i])
+
+print(f"Essa é o vetor após a subtração dos elementos:{vetor_c}")
+----------------------------------------------------------------------------------------------------------
+
+Questão 08)
+Declare uma matriz 5 x 5. Preencha com 1 a diagonal principal e com 0 os demais elementos. Escreva ao final a matriz obtida. 
+
+# Criando uma matriz 5x5 preenchida com zeros
+# usando compreensão de listas para gerar uma lista de listas
+matriz = [[0 for _ in range(5)] for _ in range(5)]
+
+# Preenchendo a diagonal principal com 1
+# Isso ocorre quando o índice da linha é igual ao índice da coluna (i == j)
+for i in range(5):
+    matriz[i][i] = 1  # Define o elemento da diagonal principal como 1
+
+# Exibindo a matriz no terminal
+for linha in matriz:
+    print(linha)  # Imprime cada linha da matriz
+
+----------------------------------------------------------------------------------------------------------
+
+Questão 09)
+Faça um programa que receba do usuário 21 valores para guardar numa matriz de 6X6 posições. O programa deve guardar na matriz e imprimir na tela na seguinte sequência:
+1 
+1 1 
+1 2 1 
+1 3 3 1 
+1 4 6 4 1 
+1 5 10 10 5 1 
+
+# Criar a matriz 6x6 com zeros
+matriz = [[0 for _ in range(6)] for _ in range(6)]
+
+# Receber 21 valores do usuário
+valores = []
+for i in range(21):
+    valor = int(input(f"Digite o valor {i+1}/21: "))
+    valores.append(valor)
+
+# Preencher a matriz conforme o formato do Triângulo de Pascal
+indice = 0
+for i in range(6):
+    for j in range(i + 1):
+        matriz[i][j] = valores[indice]
+        indice += 1
+
+# Imprimir apenas os valores preenchidos (sem os zeros)
+print("\nMatriz no formato do Triângulo de Pascal:")
+for i in range(6):
+    for j in range(i + 1):
+        print(f"{matriz[i][j]:<4}", end="")
+    print()
+-----------------------------------------------------------------------------------------------------
+Questão 10)
+Faça um programa que crie automaticamente uma cartela bidimensional (uma matriz de 5 linhas e 5 colunas). Entre os valores de 0 a 99. Gere apenas uma cartela para o teste. Depois crie um sorteador automático para gerar um número quando o usuário digitar a letra “s” para sim ou “n” para não, para parar o sorteio. O Usuário ao digitar “s”, o sorteador escolhe um 
+valor automático. Se o valor estiver na cartela o programa diz: “Bingo você foi sorteado”. 
+
+import random
+import os
+import time
+
+# gera cartela 5x5 com numeros únicos de 0 a 99
+# (25 porque a cartela é 5 linhas x 5 colunas = 25 posições)
+numero_cartela = random.sample(range(100), 25)
+# Divide a lista de 25 números em 5 listas de 5 elementos cada (matriz 5x5)
+# Usamos range(0, 25, 5) para pegar fatias da lista de 5 em 5 elementos
+cartela = [numero_cartela[i:i+5] for i in range (0,25,5)]
+
+#imprimir cartela de forma mais bonita
+print("\n" + "="*30)
+print("🟦 SUA CARTELA DA SORTE 🟦".center(30))
+print("="*30)
+
+for linha in cartela:
+    for num in linha:
+        print(f"{num:02d}".center(5), end=" ")
+    print()
+
+print("="*30)
+
+# vetor dos numeros sorteados
+numeros_sorteados = []
+
+# loop pra fazer o sorteio dos numeros
+while True:
+    escolha = input("\n🎯 Digite [s] para sortear ou [n] para sair: ").strip().lower()
+
+    if escolha == "n":
+        print("\n🎉 Obrigado por jogar! Até a próxima!")
+        break
+    elif escolha == "s":
+        while True:
+            numero = random.randint(0, 99)
+            if numero not in numeros_sorteados:
+                numeros_sorteados.append(numero)
+                break
+
+        print(f"\n🔔 Número sorteado: [{numero:02d}]")
+        encontrado = False
+
+        for linha in cartela:
+            if numero in linha:
+                encontrado = True
+                break
+
+        if encontrado:
+            print("\n" + "🎉✨ BINGO! Você foi sorteado! ✨🎉".center(50))
+        else:
+            print("❌ Ainda não foi dessa vez... Tente novamente!")
+
+        print("-" * 50)
+    else:
+        print("⚠️ Entrada inválida. Digite apenas 's' ou 'n'.")
+----------------------------------------------------------------------------------------------------------
+
+Questão 11)
+Ler dois conjuntos de números reais, armazenando-os em vetores e calcular o produto escalar entre eles. Os conjuntos têm 5 elementos cada. Imprimir os dois conjuntos e o produto escalar, sendo que o produto escalar é dado por: x1*y1 + x2*y2 + ... + xn*yn.
+
+# Lê os dois vetores com 5 elementos reais cada
+print("Digite 5 números reais para o vetor X:")
+vetor_x = []
+for i in range(5):
+    valor = float(input(f"X[{i+1}]: "))
+    vetor_x.append(valor)
+
+print("\nDigite 5 números reais para o vetor Y:")
+vetor_y = []
+for i in range(5):
+    valor = float(input(f"Y[{i+1}]: "))
+    vetor_y.append(valor)
+
+# Calcula o produto escalar
+produto_escalar = 0
+for i in range(5):
+    produto_escalar += vetor_x[i] * vetor_y[i]
+
+# Mostra os vetores e o produto escalar
+print("\nVetor X:", vetor_x)
+print("Vetor Y:", vetor_y)
+print(f"\n✅ Produto escalar: {produto_escalar}")
+----------------------------------------------------------------------------------------------------------
+
+Questão 12)
+Faça um programa que calcule o desvio padrão de um vetor v contendo n = 10 números, onde m é a media do vetor.
+
+# Lê 10 números do usuário e armazena no vetor
+v = []
+print("Digite 10 números:")
+for i in range(10):
+    num = float(input(f"Valor {i+1}: "))
+    v.append(num)
+
+# Calcula a média
+soma = 0
+for valor in v:
+    soma += valor
+media = soma / len(v)
+
+# Calcula a soma dos quadrados das diferenças
+soma_diferencas = 0
+for valor in v:
+    soma_diferencas += (valor - media) ** 2
+
+# Função para calcular a raiz quadrada manualmente (método de aproximação de Newton)
+def raiz_quadrada(x):
+    aproximacao = x / 2
+    for _ in range(20):  # Quanto mais iterações, mais preciso
+        aproximacao = (aproximacao + x / aproximacao) / 2
+    return aproximacao
+
+# Calcula o desvio padrão
+desvio_padrao = raiz_quadrada(soma_diferencas / len(v))
+
+# Exibe os resultados
+print(f"\nVetor: {v}")
+print(f"Média: {media}")
+print(f"✅ Desvio padrão: {desvio_padrao}")
+
+'''

@@ -1,0 +1,15 @@
+'''
+Questão 05)
+Fazer um algoritmo que contenha um vetor de 10(dez) espaços de memória e, que os mesmos sejam preenchidos com valores inteiros sorteados pelo próprio computador. O programa deve exibir todos os números pares na tela. 
+'''
+import random
+
+vetor = []
+
+for i in range(10):
+    vetor.append(random.randint(0,100))
+print(vetor)
+
+for i in range(10):
+    if vetor[i] % 2 == 0:
+        print(f"Os números pares do vetor são: {vetor[i]}")

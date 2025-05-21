@@ -1,0 +1,37 @@
+'''
+Questão 12) 
+Faça um programa que calcule o desvio padrão de um vetor v contendo n = 10 números, onde m é a media do vetor. 
+'''
+
+# Lê 10 números do usuário e armazena no vetor
+v = []
+print("Digite 10 números:")
+for i in range(10):
+    num = float(input(f"Valor {i+1}: "))
+    v.append(num)
+
+# Calcula a média
+soma = 0
+for valor in v:
+    soma += valor
+media = soma / len(v)
+
+# Calcula a soma dos quadrados das diferenças
+soma_diferencas = 0
+for valor in v:
+    soma_diferencas += (valor - media) ** 2
+
+# Função para calcular a raiz quadrada manualmente (método de aproximação de Newton)
+def raiz_quadrada(x):
+    aproximacao = x / 2
+    for _ in range(20):  # Quanto mais iterações, mais preciso
+        aproximacao = (aproximacao + x / aproximacao) / 2
+    return aproximacao
+
+# Calcula o desvio padrão
+desvio_padrao = raiz_quadrada(soma_diferencas / len(v))
+
+# Exibe os resultados
+print(f"\nVetor: {v}")
+print(f"Média: {media}")
+print(f"✅ Desvio padrão: {desvio_padrao}")

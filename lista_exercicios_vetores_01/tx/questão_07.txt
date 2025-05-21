@@ -1,0 +1,15 @@
+'''
+Questão 07)
+Faça um programa que receba do usuário valores inteiros para dois vetores, A e B. Cada um com 10 números. Crie um terceiro vetor denominado C que calcula C = A - B em cada posição igual de ambos. Mostre na tela os dados do vetor C. 
+'''
+
+vetor_a = []
+vetor_b = []
+vetor_c = []
+
+for i in range(10):
+    vetor_a.append(int(input(f"Digite o {i+1}° valor do vetor A: ")))
+    vetor_b.append(int(input(f"Digite o {i+1}° valor do vetor B: ")))
+    vetor_c.append(vetor_a[i] - vetor_b[i])
+
+print(f"Essa é o vetor após a subtração dos elementos:{vetor_c}")

@@ -1,0 +1,27 @@
+'''
+Questão 11)
+Ler dois conjuntos de números reais, armazenando-os em vetores e calcular o produto escalar entre eles. Os conjuntos têm 5 elementos cada. Imprimir os dois conjuntos e o produto escalar, sendo que o produto escalar é dado por: x1*y1 + x2*y2 + ... + xn*yn. 
+'''
+
+# Lê os dois vetores com 5 elementos reais cada
+print("Digite 5 números reais para o vetor X:")
+vetor_x = []
+for i in range(5):
+    valor = float(input(f"X[{i+1}]: "))
+    vetor_x.append(valor)
+
+print("\nDigite 5 números reais para o vetor Y:")
+vetor_y = []
+for i in range(5):
+    valor = float(input(f"Y[{i+1}]: "))
+    vetor_y.append(valor)
+
+# Calcula o produto escalar
+produto_escalar = 0
+for i in range(5):
+    produto_escalar += vetor_x[i] * vetor_y[i]
+
+# Mostra os vetores e o produto escalar
+print("\nVetor X:", vetor_x)
+print("Vetor Y:", vetor_y)
+print(f"\n✅ Produto escalar: {produto_escalar}")

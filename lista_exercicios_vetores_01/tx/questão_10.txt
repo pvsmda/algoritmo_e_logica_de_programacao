@@ -1,0 +1,61 @@
+'''
+Questão 10)
+Faça um programa que crie automaticamente uma cartela bidimensional (uma matriz de 5 linhas e 5 colunas). Entre os valores de 0 a 99. Gere apenas uma cartela para o teste. Depois crie um sorteador automático para gerar um número quando o usuário digitar a letra “s” para sim ou “n” para não, para parar o sorteio. O Usuário ao digitar “s”, o sorteador escolhe um 
+valor automático. Se o valor estiver na cartela o programa diz: “Bingo você foi sorteado”. 
+'''
+import random
+import os
+import time
+
+# gera cartela 5x5 com numeros únicos de 0 a 99
+# (25 porque a cartela é 5 linhas x 5 colunas = 25 posições)
+numero_cartela = random.sample(range(100), 25)
+# Divide a lista de 25 números em 5 listas de 5 elementos cada (matriz 5x5)
+# Usamos range(0, 25, 5) para pegar fatias da lista de 5 em 5 elementos
+cartela = [numero_cartela[i:i+5] for i in range (0,25,5)]
+
+#imprimir cartela de forma mais bonita
+print("\n" + "="*30)
+print("🟦 SUA CARTELA DA SORTE 🟦".center(30))
+print("="*30)
+
+for linha in cartela:
+    for num in linha:
+        print(f"{num:02d}".center(5), end=" ")
+    print()
+
+print("="*30)
+
+# vetor dos numeros sorteados
+numeros_sorteados = []
+
+# loop pra fazer o sorteio dos numeros
+while True:
+    escolha = input("\n🎯 Digite [s] para sortear ou [n] para sair: ").strip().lower()
+
+    if escolha == "n":
+        print("\n🎉 Obrigado por jogar! Até a próxima!")
+        break
+    elif escolha == "s":
+        while True:
+            numero = random.randint(0, 99)
+            if numero not in numeros_sorteados:
+                numeros_sorteados.append(numero)
+                break
+
+        print(f"\n🔔 Número sorteado: [{numero:02d}]")
+        encontrado = False
+
+        for linha in cartela:
+            if numero in linha:
+                encontrado = True
+                break
+
+        if encontrado:
+            print("\n" + "🎉✨ BINGO! Você foi sorteado! ✨🎉".center(50))
+        else:
+            print("❌ Ainda não foi dessa vez... Tente novamente!")
+
+        print("-" * 50)
+    else:
+        print("⚠️ Entrada inválida. Digite apenas 's' ou 'n'.")

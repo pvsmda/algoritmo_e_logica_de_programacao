@@ -1,0 +1,14 @@
+'''
+Questão 04)
+Fazer um algoritmo que contenha um vetor de 10(dez) espaços de memória e, que os mesmos sejam preenchidos com valores inteiros sorteados pelo próprio computador. O programa deve exibir todos os valores na tela e também escrever todos os números em ordem crescentes já modificado no próprio vetor. 
+'''
+
+import random
+
+vetor = []
+
+for i in range(10):
+    vetor.append(random.randint(0,100))
+
+print(f"Esse é o vetor: {vetor}")
+print(f"Esse é o vetor em ordem crescente: {sorted(vetor)}")

@@ -1,0 +1,13 @@
+'''
+Questão 03)
+Escreva um programa que leia 10 números inteiros e os armazene em um vetor. Imprima todo o vetor, o maior elemento e a posição que ele se encontra. 
+'''
+
+vetor = []
+
+for i in range(10):
+    vetor.append(int(input(f"Digite o {i+1}° valor: ")))
+
+print(vetor)
+print(f"O maior valor do vetor é: {max(vetor)}")
+print(f"A posição do maior valor do vetor é: {vetor.index(max(vetor))}")

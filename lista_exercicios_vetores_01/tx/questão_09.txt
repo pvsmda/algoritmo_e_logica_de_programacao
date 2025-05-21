@@ -1,0 +1,34 @@
+'''
+Questão 09)
+Faça um programa que receba do usuário 21 valores para guardar numa matriz de 6X6 posições. O programa deve guardar na matriz e imprimir na tela na seguinte sequência:
+1 
+1 1 
+1 2 1 
+1 3 3 1 
+1 4 6 4 1 
+1 5 10 10 5 1 
+'''
+
+# Criar a matriz 6x6 com zeros
+matriz = [[0 for _ in range(6)] for _ in range(6)]
+
+# Receber 21 valores do usuário
+valores = []
+for i in range(21):
+    valor = int(input(f"Digite o valor {i+1}/21: "))
+    valores.append(valor)
+
+# Preencher a matriz conforme o formato do Triângulo de Pascal
+indice = 0
+for i in range(6):
+    for j in range(i + 1):
+        matriz[i][j] = valores[indice]
+        indice += 1
+
+# Imprimir apenas os valores preenchidos (sem os zeros)
+print("\nMatriz no formato do Triângulo de Pascal:")
+for i in range(6):
+    for j in range(i + 1):
+        print(f"{matriz[i][j]:<4}", end="")
+    print()
+
